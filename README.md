@@ -1,5 +1,7 @@
 # timetable-front
 
+https://zeytunyan.github.io/timetable-front/
+
 A small site made using AngularJS as a laboratory work while studying at university.  frontend for a nodeJS server application. 
 
 This is a frontend for a NodeJS server application (also made as a lab work) - https://github.com/zeytunyan/timetable-server.
