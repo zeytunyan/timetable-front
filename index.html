@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html ng-app="clientApp" ng-controller="clientCtrl" xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Connect everything, including angular -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Timetable</title>
+    <link href="css/stylesheet.css" rel="stylesheet" type="text/css" />
+    <link href="images/fab.gif" rel="shortcut icon" type="image/gif" />
+    <script src="js/libs/angular.min.js"></script>
+</head>
+
+<body>
+
+    <!-- Navigation bar -->
+    <nav>
+        <div class="main-container">
+            <div class="logo" ng-click="changePlace('Home')"></div>
+            <div class="button-container">
+                <div ng-repeat="button in menu" ng-click="changePlace(button)" class="nav-button">
+                    {{button}}
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="main-container">
+        <!-- Header -->
+        <div class="big-text">
+            {{place}}
+        </div>
+        <!-- Text, changing depending on the location -->
+        <div class="text" ng-switch on="place">
+            <span ng-switch-when="Home">
+                Good afternoon! <br />
+                Here you can see our timetable, find out information about teachers, groups and class locations. <br />
+                Use the menu above to navigate.
+            </span>
+            <span ng-switch-when="Timetable">
+                This is our timetable.
+            </span>
+            <span ng-switch-when="Groups">
+                We are proud of our students! <br />
+                This is a list of groups.
+            </span>
+            <span ng-switch-when="Teachers">
+                Our teachers are the best professionals in their field.
+            </span>
+            <span ng-switch-when="Classrooms">
+                All our classrooms are very comfortable and spacious, and they have the latest equipment installed in them.
+            </span>
+        </div>
+
+        <!-- Loading, if the answer did not come -->
+        <div class="loader" ng-if="loading"></div>
+        
+        <!-- If the answer came, a table is displayed-->
+        <table ng-if="table">
+            <tr>
+                <th ng-repeat="th in table[0]" ng-if="th.nodeName != 'id'">
+                    {{th.nodeName | xmlTagFilter}}
+                </th>
+            </tr>
+            <tr ng-repeat="tr in table">
+                <td ng-repeat="td in tr" ng-if="td.nodeName != 'id'">
+                    {{td.childNodes[0].nodeValue}}
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <!-- <div class="main-container"> -->
+            <div class="small-text">
+                Copyright © 2020 &emsp; Georgiy Zeytunyan, Group № 3530903/60301 &emsp; All Rights Reserved 
+                <!-- <br /> -->
+                
+            </div>
+        <!-- </div> -->
+    </footer>
+
+    <!-- Creating a module and connecting a script with a controller -->
+    <script>angular.module("clientApp", []);</script>
+    <script src="js/scripts/script.js"></script>
+
+</body>
+</html>

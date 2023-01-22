@@ -1,0 +1,122 @@
+@charset "UTF-8";
+
+body {
+  margin: 0;
+  padding: 0;
+  background-attachment: scroll;
+  background-image: url(../images/background.jpg);
+  background-repeat: repeat-x;
+  background-position: left top;
+  height: 100%;
+}
+
+nav {
+  width: 100%;
+  height: 10vmin;
+  background-color: #FFFFFF;
+  border-bottom: 1px solid #afafaf;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+footer {
+  width: 100%;
+  height: 5vmin;
+  background-color: #333333;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  border-top: 2px solid #555555;
+  margin-top: 5vmin;
+}
+
+.main-container {
+  width: 95vmin;
+  padding: 0 2vmin;
+  margin: 0 auto;
+}
+
+.logo {
+  width: 20vmin;
+  height: 10vmin;
+  float: left;
+  background-image: url(../images/logo.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+  background-size: contain;
+}
+
+.button-container {
+  margin: 0 10vmin;
+  float: left;
+}
+
+.nav-button {
+  padding: 0 2vmin;
+  font-family: Georgia, Helvetica, Verdana, Arial, sans-serif;
+  font-style: italic;
+  font-size: 2vmin;
+  float: left;
+  cursor: pointer;
+  text-align: center;
+  line-height: 10vmin;
+}
+
+.nav-button:hover {
+  color: Snow;
+  background-color: rgb(55, 178, 73);
+  transition: 0.4s;
+}
+
+.big-text {
+  margin-top: 10vmin;
+	margin-bottom: 3vmin;
+  padding-left: 2vmin;
+  font-size: 2.5rem;
+  color: #000000;
+  font-style: italic;
+	border-bottom: 1px solid #e0e0e0;
+}
+
+.text {
+  font-size: 1.4rem;
+  color: #333333;
+  font-style: italic;
+  padding-left: 1vmin;
+  margin-bottom: 5vmin;
+}
+
+.small-text {
+  color: #e0e0e0;
+  font-size: 1.7vmin;
+  margin: 1.5vmin auto;
+  text-align: center;
+}
+
+.loader {
+  background-image: url(../images/loading.gif);
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 5.5vmin auto;
+  width: 30vmin;
+  height: 30vmin;
+  background-size: contain;
+}
+
+table {
+  font-size: 1.2rem;
+  color: #333333;
+  font-style: italic;
+  border-collapse: collapse;
+  margin: 0 auto 10vmin auto;
+}
+
+th, td {
+  border: 1px solid black;
+  padding: 2vmin 3vmin;
+  text-align: center;
+}
